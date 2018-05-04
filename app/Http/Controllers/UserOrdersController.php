@@ -16,7 +16,6 @@ class UserOrdersController extends Controller
     {
         $user = auth()->user();
         $orders = Order::with('status')->where('user_id', $user->id)->get();
-
         return view('index', compact('user', 'orders'));
     }
 
@@ -33,31 +32,29 @@ class UserOrdersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $request->validate([
-            'address' => 'required',
-            'size' => 'required',
+          'address' => 'required',
+          'size' => 'required',
         ]);
-
         $order = Order::create([
-            'user_id' => auth()->user()->id,
-            'address' => $request->address,
-            'size' => $request->size,
-            'toppings' => implode(', ', $request->toppings),
-            'instructions' => $request->instructions,
+          'user_id' => auth()->user()->id,
+          'address' => $request->address,
+          'size' => $request->size,
+          'toppings' => implode(', ', $request->toppings),
+          'instructions' => $request->instructions,
         ]);
-
         return redirect()->route('user.orders.show', $order)->with('message', 'Order received!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show(Order $order)

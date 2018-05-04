@@ -4,12 +4,12 @@ namespace App\Events;
 
 use App\Order;
 use Illuminate\Broadcasting\Channel;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
-use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Broadcasting\PresenceChannel;
+use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class OrderStatusChanged implements ShouldBroadcast
 {
@@ -35,7 +35,7 @@ class OrderStatusChanged implements ShouldBroadcast
     public function broadcastOn()
     {
         // return new PrivateChannel('pizza-tracker.'.$this->order->id);
-        return ['private-pizza-tracker.'.$this->order->id, 'pizza-tracker'];
+        return ['private-pizza-tracker.' . $this->order->id, 'pizza-tracker'];
     }
 
     /**
@@ -46,10 +46,9 @@ class OrderStatusChanged implements ShouldBroadcast
     public function broadcastWith()
     {
         $extra = [
-            'status_name' => $this->order->status->name,
-            'status_percent' => $this->order->status->percent,
+          'status_name' => $this->order->status->name,
+          'status_percent' => $this->order->status->percent,
         ];
-
         return array_merge($this->order->toArray(), $extra);
     }
 }

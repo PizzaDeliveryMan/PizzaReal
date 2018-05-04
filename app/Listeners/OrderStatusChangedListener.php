@@ -3,8 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\OrderStatusChanged;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
 
 class OrderStatusChangedListener
 {
@@ -21,7 +21,7 @@ class OrderStatusChangedListener
     /**
      * Handle the event.
      *
-     * @param  OrderStatusChanged  $event
+     * @param  OrderStatusChanged $event
      * @return void
      */
     public function handle(OrderStatusChanged $event)

@@ -1,9 +1,9 @@
 <?php
 
 use App\Status;
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class SeedStatusesTable extends Migration
 {
@@ -15,28 +15,24 @@ class SeedStatusesTable extends Migration
     public function up()
     {
         Status::create([
-            'name' => 'Order Placed',
-            'percent' => 10,
+          'name' => 'Order Placed',
+          'percent' => 10,
         ]);
-
         Status::create([
-            'name' => 'Prep',
-            'percent' => 30,
+          'name' => 'Prep',
+          'percent' => 30,
         ]);
-
         Status::create([
-            'name' => 'Bake',
-            'percent' => 50,
+          'name' => 'Bake',
+          'percent' => 50,
         ]);
-
         Status::create([
-            'name' => 'Quality Check',
-            'percent' => 70,
+          'name' => 'Quality Check',
+          'percent' => 70,
         ]);
-
         Status::create([
-            'name' => 'Out for Delivery',
-            'percent' => 100,
+          'name' => 'Out for Delivery',
+          'percent' => 100,
         ]);
     }
 
