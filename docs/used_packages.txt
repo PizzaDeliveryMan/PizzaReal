@@ -1,0 +1,16 @@
+
+
+Require
+"fideloper/proxy":	"~3.3",
+"laravel/framework": "5.4.*",
+"laravel/tinker":	"~1.0",
+"pusher/pusher-php-server": "~3.0"
+
+Dev
+
+
+"filp/whoops":	"~2.1",
+"fzaninotto/faker":	"~1.7",
+"mockery/mockery":	"~0.9",
+"phpunit/phpunit":	"~6.5"
+
